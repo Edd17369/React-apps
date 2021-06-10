@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Board from "./sc";
 
+export const MyContext = React.createContext();
+
 const Game = (props) => {
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [step, setStep] = useState(1);
@@ -47,9 +49,11 @@ const Game = (props) => {
 
   return (
     <div className="game">
-      <div className="game-board">
-        <Board handleClick={handleClick} board={board} status={status} />
-      </div>
+      <MyContext.Provider value={{ handleClick, board, status }}>
+        <div className="game-board">
+          <Board />
+        </div>
+      </MyContext.Provider>
       <div className="game-info">
         <ul>
           {history.map((move, index) => (

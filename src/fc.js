@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { MyContext } from "./tc";
 
-const Square = (props) => {
+const Square = ({ value }) => {
+  const cntx = useContext(MyContext);
   return (
     <div>
-      <button className="square" onClick={props.onClick}>
-        {props.value}
+      <button className="square" onClick={() => cntx.handleClick(value)}>
+        {cntx.board[value]}
       </button>
     </div>
   );
