@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { MyContext } from "./tc";
+import { MyContext } from "./game";
 
 const Square = ({ value }) => {
   const cntx = useContext(MyContext);

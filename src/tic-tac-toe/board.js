@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import Square from "./fc";
-import { MyContext } from "./tc";
+import Square from "./squares";
+import { MyContext } from "./game";
 
 const Booardo = (props) => {
   const cntx = useContext(MyContext);

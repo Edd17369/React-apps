@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Component from "./tc";
+import Component from "./tic-tac-toe/game";
+import ErrorBoundary from "./errores/errores";
 
 // my-components --> App --> index.js
 function App() {
@@ -8,7 +9,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Component />
+        <ErrorBoundary>
+          <Component />
+        </ErrorBoundary>
       </header>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Board from "./sc";
+import Board from "./board";
 
 export const MyContext = React.createContext();
 
